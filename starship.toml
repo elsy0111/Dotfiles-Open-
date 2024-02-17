@@ -1,0 +1,65 @@
+format = """
+[👾 ](bold green)$git_branch$python$conda$git_commit$time$cmd_duration
+[│ ](bold green)$directory$package$memory_usage
+[└─](bold green)$character """
+
+command_timeout = 500
+
+[cmd_duration]
+min_time = 500
+format = "underwent [$duration](bold yellow)"
+
+[directory]
+read_only = " "
+truncation_length = 4
+style = "bold fg:#03BDBA"
+
+[memory_usage]
+disabled = false
+threshold = -1
+symbol = "🐏 "
+style = "bold purple"
+
+# [battery]
+# full_symbol = "🔋 "
+# charging_symbol = "⚡️ "
+# discharging_symbol = "💀 "
+
+# [[battery.display]]
+# threshold = 100
+# style = "bold green"
+
+[username]
+style_user = "white bold"
+style_root = "black bold"
+format = "[$user ]($style)"
+disabled = false
+show_always = false	
+
+[python]
+symbol = "🐍 "
+pyenv_version_name = true
+
+[conda]
+format = "[$symbol$environment](dimmed green) "
+
+[git_branch]
+# 
+symbol = "  "
+style = "bold green"
+format = "on 🐈[$symbol$branch ]($style)"
+
+[git_commit]
+commit_hash_length = 4
+tag_symbol = "🔖 "
+
+[time]
+disabled = false
+format = '[$time ]($style) '
+time_format = "%I:%M:%S %p"
+utc_time_offset = "+9"
+style = "bold yellow"
+
+[character]
+error_symbol = "[>>>](bold red)"
+success_symbol = "[>>>](bold green)"
